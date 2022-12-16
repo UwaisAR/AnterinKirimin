@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AnterinKirimin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/AnterinKirimin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
