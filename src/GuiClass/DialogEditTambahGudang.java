@@ -36,7 +36,6 @@ public class DialogEditTambahGudang extends javax.swing.JDialog {
             jLabel1.setText("Tambah Gudang");
             jButton1.setText("Tambah");
             gudang = new Gudang(null, "");
-            DATA.addDATA(gudang);
         }
     }
 
