@@ -424,7 +424,6 @@ public class GUIMenuKurir extends javax.swing.JFrame {
                 LIST_PAKET_GUDANG.get(jTable1.getSelectedRow()).setStatus("RECEIVED TO RECIPIENT {"+LIST_PAKET_GUDANG.get(jTable1.getSelectedRow()).getAlamatTujuan()+"]");
                 DATA.updateDATA(LIST_PAKET_GUDANG.get(jTable1.getSelectedRow()));
                 kurir.setStatus("DELIVERING THE PACKAGE TO RECIPIENT");
-                DATA.updateDATA(LIST_PAKET_GUDANG.get(jTable1.getSelectedRow()));
                 DATA.updateDATA(kurir);
                 DATA.updateDATA(gudang);
                 showAll();
@@ -438,8 +437,8 @@ public class GUIMenuKurir extends javax.swing.JFrame {
     private void btnKirimGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKirimGudangActionPerformed
         try {
             // TODO add your handling code here:
-            LIST_PAKET_GUDANG.get(jTable1.getSelectedRow()).setGudang(DATA.listGudang.stream().filter(t -> LIST_PAKET_GUDANG.get(jTable1.getSelectedRow()).getAlamatTujuan().toLowerCase().contains(t.getKota().toLowerCase())).findFirst().orElse(null)
-            );
+            LIST_PAKET_GUDANG.get(jTable1.getSelectedRow()).setGudang(DATA.listGudang.stream().filter(t -> LIST_PAKET_GUDANG.get(jTable1.getSelectedRow()).getAlamatTujuan().toLowerCase().contains(t.getKota().toLowerCase())).findFirst().orElse(null));
+            LIST_PAKET_GUDANG.get(jTable1.getSelectedRow()).setKurir(null);
             kurir.setStatus("DELIVERING PACKAGE TO RECIPIENT WAREHOUSE ["+gudang.getKota()+"]");
             DATA.updateDATA(kurir);
             DATA.updateDATA(LIST_PAKET_GUDANG.get(jTable1.getSelectedRow()));

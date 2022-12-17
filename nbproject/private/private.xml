@@ -3,11 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/GUIMenuKurir.java</file>
             <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/DialogEditDaftarPengirim.java</file>
-            <file>file:/C:/Users/roni/AnterinKirimin/src/DAO/DAO.java</file>
+            <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/DialogDetailEditPaket.java</file>
+            <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/GUIMenuAdmin.java</file>
+            <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/GUIMenuPengirim.java</file>
+            <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/StartMenu.java</file>
+            <file>file:/C:/Users/roni/AnterinKirimin/src/DAO/DAOImplements.java</file>
+            <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/DialogPembayaran.java</file>
             <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/DialogEditTambahPaketItem.java</file>
             <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/DialogEditTambahGudang.java</file>
-            <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/DialogPembayaran.java</file>
+            <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/GUILogin.java</file>
             <file>file:/C:/Users/roni/AnterinKirimin/src/GuiClass/DialogEditTambahKurir.java</file>
         </group>
     </open-files>

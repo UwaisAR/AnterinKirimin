@@ -681,6 +681,11 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         try {
             // TODO add your handling code here:
+            if (jTabbedPane1.getSelectedIndex()==2){
+                btnHapus.setEnabled(false);
+            } else {
+                btnHapus.setEnabled(true);
+            }
             showTable();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, ex);
@@ -726,6 +731,20 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
                     model.addRow(new Object[]{p.getKode(), p.getUsername(), p.getPassword(), p.getNoHp(), ((Kurir)p).getKota(), ((Kurir)p).getStatus()});
                 }
                 break;
+            case 2:
+                for (Paket p : DATA.listPaket.stream().filter(t ->
+                        t.getNoResi().toLowerCase().contains(jTextField1.getText().toLowerCase())||
+                        t.getTanggalDibuat().toString().toLowerCase().contains(jTextField1.getText().toLowerCase())||
+                        t.getEstimasiSampai().toLowerCase().contains(jTextField1.getText().toLowerCase())||
+                        t.getTipe().toLowerCase().contains(jTextField1.getText().toLowerCase())||
+                        t.getStatus().toLowerCase().contains(jTextField1.getText().toLowerCase())||
+                        String.valueOf(t.hargaBarang()+t.hargaPajak()).toLowerCase().contains(jTextField1.getText().toLowerCase())||
+                        t.getPengirim().getUsername().toLowerCase().contains(jTextField1.getText().toLowerCase())||
+                        t.getPengirim().getKode().toLowerCase().contains(jTextField1.getText().toLowerCase())
+                ).collect(Collectors.toList())) {
+                    model.addRow(new Object[]{p.getNoResi(), p.getEstimasiSampai(), p.getTanggalDibuat(), p.getTipe(), p.getStatus(), p.hargaBarang()+p.hargaPajak(), p.getPengirim().getKode()});
+                }
+                break;
         }
         jTable1.setModel(model);
         jTextField1.setText(null);
@@ -763,9 +782,6 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
                         break;
                     case 1:
                         DATA.hapusDATA(DATA.listAkun.stream().filter(t -> t instanceof Kurir&&t.getKode().equals(hapusElemen)).findFirst().orElse(null));
-                        break;
-                    case 2:
-                        DATA.hapusDATA(DATA.listGudang.get(ltGudang.getSelectedIndex()));
                         break;
                 }
                 showTable();

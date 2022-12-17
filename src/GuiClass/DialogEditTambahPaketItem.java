@@ -644,11 +644,10 @@ public class DialogEditTambahPaketItem extends javax.swing.JDialog {
             tfLength.getForeground()==Color.BLACK&&
             tfWidth.getForeground()==Color.BLACK)||
             (tfWeight.getForeground()==Color.BLACK))){
-            Item item = null;
+            Item item = new Item(null, null, 0);
             if (tfWeight.isEnabled()){
                 try {
                     item = new Item(null, tfItemName.getText(), Double.parseDouble(tfWeight.getText()));
-                    item.setPaket(GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount));
                 } catch (NumberFormatException e){
                     JOptionPane.showMessageDialog(this, "Input berat salah");
                 }
@@ -656,7 +655,6 @@ public class DialogEditTambahPaketItem extends javax.swing.JDialog {
             } else {
                 try {
                     item = new Item(null, tfItemName.getText(), new double[]{Double.parseDouble(tfLength.getText()),Double.parseDouble(tfWidth.getText()),Double.parseDouble(tfHeight.getText())});
-                    item.setPaket(GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount));
                 } catch (NumberFormatException e){
                     JOptionPane.showMessageDialog(this, "Input dimensi salah");
                 }
@@ -665,6 +663,7 @@ public class DialogEditTambahPaketItem extends javax.swing.JDialog {
                 if ("Edit Paket".equals(jLabel6.getText())){
                     DATA.addDATA(item);
                     lTotalHarga.setText("Total harga: Rp."+GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount).hargaBarang()+" ("+GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount).hargaPajak()+")");
+                    item.setPaket(GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount));
                 } else {
                     paket = new Paket(null, LocalDate.now(), rbFast.isSelected()?"FAST":"SLOW", "WAITING FOR PAYMENT", Integer.parseInt(tfJarak.getText()), tfAlamat.getText());
                     listItem.add(item);
