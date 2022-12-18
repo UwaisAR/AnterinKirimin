@@ -644,7 +644,7 @@ public class DialogEditTambahPaketItem extends javax.swing.JDialog {
             tfLength.getForeground()==Color.BLACK&&
             tfWidth.getForeground()==Color.BLACK)||
             (tfWeight.getForeground()==Color.BLACK))){
-            Item item = new Item(null, null, 0);
+            Item item = null;
             if (tfWeight.isEnabled()){
                 try {
                     item = new Item(null, tfItemName.getText(), Double.parseDouble(tfWeight.getText()));
@@ -660,11 +660,11 @@ public class DialogEditTambahPaketItem extends javax.swing.JDialog {
                 }
             } 
             try {
-                if ("Edit Paket".equals(jLabel6.getText())){
+                if ("Edit Paket".equals(jLabel6.getText())&&item!=null){
                     DATA.addDATA(item);
                     lTotalHarga.setText("Total harga: Rp."+GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount).hargaBarang()+" ("+GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount).hargaPajak()+")");
                     item.setPaket(GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount));
-                } else {
+                } else if(item!=null) {
                     paket = new Paket(null, LocalDate.now(), rbFast.isSelected()?"FAST":"SLOW", "WAITING FOR PAYMENT", Integer.parseInt(tfJarak.getText()), tfAlamat.getText());
                     listItem.add(item);
                     paket.setItem(listItem);
