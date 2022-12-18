@@ -14,9 +14,9 @@ import java.util.ArrayList;
  */
 abstract public class  Akun{
     private String id;
-    private String username;
-    private String password;
-    private String noHp;
+    protected String username;
+    protected String password;
+    protected String noHp;
 
     public Akun(String id, String username, String password, String noHp) {
         this.id = id;
