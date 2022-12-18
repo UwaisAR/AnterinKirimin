@@ -442,7 +442,6 @@ public class GUIMenuPengirim extends javax.swing.JFrame {
         try {
             new DialogEditTambahPaketItem(this, true).setVisible(true);
         } catch (Exception e) {
-            //System.out.println("PPPPPPPP"+e);
             JOptionPane.showMessageDialog(this, "Paket belum dipilih");
         }
     }//GEN-LAST:event_btnDetailActionPerformed

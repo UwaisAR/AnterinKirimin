@@ -626,7 +626,6 @@ public class DAO{
                 statement.setDouble(4, t.getDimensi()[1]);
                 statement.setDouble(5, t.getDimensi()[2]);
                 statement.setDouble(6, t.getBerat());
-                System.out.println(t.getBerat());
                 statement.setString(7, (t.getPaket()!=null)?String.valueOf(t.getPaket().getId()):"0");
                 statement.executeUpdate();
                 t.setId((t.getId()==null)?getItemDAO().getAll().get(getItemDAO().getAll().size()-1).getId():t.getId());

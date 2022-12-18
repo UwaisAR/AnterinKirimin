@@ -772,10 +772,11 @@ public class DialogEditTambahPaketItem extends javax.swing.JDialog {
             if ((jLabel6.getText().equals("Edit Paket")||jLabel6.getText().equals("Detail Paket"))){
                 DATA.hapusDATA(GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount).getItem().get(jTable1.getSelectedRow()));
                 GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount).getItem().remove(jTable1.getSelectedRow());
+                lTotalHarga.setText("Total harga: Rp."+GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount).hargaBarang()+" ("+GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount).hargaPajak()+")");
             } else {
                 listItem.remove(jTable1.getSelectedRow());
+                lTotalHarga.setText("Total harga: Rp."+paket.hargaBarang()+" ("+paket.hargaPajak()+")");
             }
-            lTotalHarga.setText("Total harga: Rp."+GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount).hargaBarang()+" ("+GUIMenuPengirim.pengirim.getPaket().get(GUIMenuPengirim.tableCount).hargaPajak()+")");
             JOptionPane.showMessageDialog(this, "Item berhasil dihapus");
             showTable();
         } catch(SQLException ex) {
