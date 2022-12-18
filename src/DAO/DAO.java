@@ -29,11 +29,11 @@ import java.util.stream.Collectors;
  * @author roni
  */
 public class DAO{
-    private final String SQL_INSERT = "INSERT INTO TABLE_NAME VALUES VLS";
-    private final String SQL_UPDATE = "UPDATE TABLE_NAME SET COLUMN WHERE id=?";
-    private final String SQL_DELETE = "DELETE FROM TABLE_NAME WHERE id=?";
-    private final String SQL_GETBYID = "SELECT * FROM TABLE_NAME  WHERE id=?";
-    private final String SQL_GETALL = "SELECT * FROM TABLE_NAME ";
+    private final static String SQL_INSERT = "INSERT INTO TABLE_NAME VALUES VLS";
+    private final static String SQL_UPDATE = "UPDATE TABLE_NAME SET COLUMN WHERE id=?";
+    private final static String SQL_DELETE = "DELETE FROM TABLE_NAME WHERE id=?";
+    private final static String SQL_GETBYID = "SELECT * FROM TABLE_NAME  WHERE id=?";
+    private final static String SQL_GETALL = "SELECT * FROM TABLE_NAME ";
     
     private PreparedStatement statement;
     private ResultSet result;
