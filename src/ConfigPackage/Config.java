@@ -17,7 +17,6 @@ import java.util.logging.Logger;
  */
 public class Config {
     private static Connection connection;
-    private static PreparedStatement ps;
     public static Connection configDataBase()throws SQLException{
         try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
