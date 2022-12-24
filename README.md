@@ -8,4 +8,4 @@ Link database menggunakan sql https://drive.google.com/file/d/1um3CFq654MVt5-6v6
 Instalasi:
 - import sql ke server localhost mysql bisa menggunkan phpmyadmin
 - masuk folder dist dan buka cmd
-- masukkan "java -jar AnterinKirimin.jar"
+- masukkan "java -jar AnterinKirimin.jar" pastikan terkoneksi dengan server localhost
