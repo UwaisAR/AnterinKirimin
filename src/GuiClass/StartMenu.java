@@ -140,7 +140,7 @@ public class StartMenu extends javax.swing.JFrame {
             pilih = "pengirim";
             new GUILogin().setVisible(true);
             dispose();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Terjadi Kesalahan\n"+e, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -151,7 +151,7 @@ public class StartMenu extends javax.swing.JFrame {
             pilih = "kurir";
             new GUILogin().setVisible(true);
             dispose();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Terjadi Kesalahan\n"+e, "Error", JOptionPane.ERROR_MESSAGE);
         }
         
@@ -163,7 +163,7 @@ public class StartMenu extends javax.swing.JFrame {
             pilih = "admin";
             new GUILogin().setVisible(true);
             dispose();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Terjadi Kesalahan\n"+e, "Error", JOptionPane.ERROR_MESSAGE);
         }
         
@@ -173,7 +173,7 @@ public class StartMenu extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             new DialogEditDaftarPengirim(this, true).setVisible(true);
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Terjadi Kesalahan");
         }
         
